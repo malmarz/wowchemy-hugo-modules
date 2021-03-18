@@ -1,3 +1,3 @@
-module github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms
+module github.com/malmarz/wowchemy-hugo-modules/wowchemy-cms
 
 go 1.15

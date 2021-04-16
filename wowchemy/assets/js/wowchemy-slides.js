@@ -59,6 +59,21 @@ if (pluginOptions.menu_enabled) {
   enabledPlugins.push(RevealMenu);
 }
 
+//enable chalkboard by default if not set
+if (typeof pluginOptions.chalkboard_enabled === 'undefined') {
+  pluginOptions.chalkboard_enabled = true;
+}
+
+// configure menu if enabled
+if (pluginOptions.chalkboard_enabled) {
+  enabledPlugins.push(RevealChalkboard);
+  pluginOptions["chalkboard"] = { // font-awesome.min.css must be available
+    toggleChalkboardButton: { left: "80px" },
+    toggleNotesButton: { left: "130px" },
+    // theme: "whiteboard"
+  }
+}
+
 pluginOptions['plugins'] = enabledPlugins;
 
 Reveal.initialize(pluginOptions);
